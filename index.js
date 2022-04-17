@@ -1,11 +1,15 @@
 import { movieDesign } from '/second.js';
 var searchMovie     =   document.getElementById('search-bar');
 var sugesttionBar   =   document.getElementById('suggestions');
+var SearchButton    =   document.getElementById('get-my-search');
 var movieName       =   "";
 var MovieDocument   ;
 
+console.log(SearchButton)
+
 //to complete
 searchMovie.addEventListener('keyup',function(e){
+    console.log(e.key);
     switch(e.key){
         case 'Shift':
             break;
@@ -13,6 +17,10 @@ searchMovie.addEventListener('keyup',function(e){
             parameter(movieName);
             break;
         case 'CapsLock':
+            break;
+        case 'ArrowLeft':
+            break;
+        case 'ArrowRight':
             break;
         case 'Backspace':
             if(movieName.length<=1)
@@ -33,7 +41,10 @@ searchMovie.addEventListener('keyup',function(e){
     
 });
 
-
+SearchButton.addEventListener('click',function(){
+    parameter(movieName);
+    // console.log('clicked here in search');
+})
 
 
 searchMovie.addEventListener('click',function(){
