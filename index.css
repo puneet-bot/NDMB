@@ -1,0 +1,100 @@
+#Search-bar{
+    background-color: transparent;
+    border: none;
+    height: 50px;
+    font-size: 30px;
+}
+body{
+    background-color: black;
+}
+#movie-main-heading{
+    font-size:5rem;
+    margin-top:15%;
+    text-align:center;
+     font-weight:600;
+}
+
+.invisible{
+    display: none;
+}
+
+.search-back-color{
+    background-color: rgba(44, 41, 41, 0.575);
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+    border-bottom: 2px solid grey;
+    position: relative;
+    width: 100% !important;
+}
+.movie-link{
+    text-decoration: none;
+    color: white;
+}
+
+#hee{
+    overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-bottom: 30px;
+}
+#My-Movie{
+    height: 70vh;
+}
+#main {
+    background: url("https://cdn.hipwallpaper.com/i/61/29/1xJTEV.jpg") no-repeat fixed;
+    height: 95vh;
+    width: 100%;
+    overflow: hidden;
+    color: #FFFFFF;
+    position: absolute;
+   }
+   
+   .overlay {
+    background: rgba(13, 14, 14, 0.726);
+    overflow: hidden;
+    height: 100%;
+   }
+
+@media screen and (max-width: 800px) {
+    #search-bar{
+        width: 50% !important;
+        background-color: rebeccapurple !important;
+        margin-left: 10px;
+    }
+    .navbar{
+        display: flex;
+        flex-wrap: inherit;
+    }
+    .NDMB{
+        font-size: 18px !important;
+    }
+    .navbar-toggler{
+        display: none;
+    }
+    #movie-main-heading{
+        font-size:3rem;
+        margin-top:25%;
+    }
+}
+@media screen and (max-width: 500px) {
+    #search-bar{
+        width: 100% !important;
+        background-color: rebeccapurple !important;
+        margin-left: -10px;
+    }
+    #movie-main-heading{
+        margin-top:45%;
+        font-size: 2rem;
+    }
+    .navbar{
+        display: flex;
+        flex-wrap: inherit;
+    }
+    .NDMB{
+        font-size: 14px !important;
+    }
+    .navbar-toggler{
+        display: none;
+    }
+}
