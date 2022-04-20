@@ -67,7 +67,7 @@ let parameter = async function (movie) {
         anchorTag.appendChild(para);
         sugesttionBar.appendChild(anchorTag);
             anchorTag.addEventListener('click',async function(){
-            let myParam1 = await func('get', `http://www.omdbapi.com/?i=${this.getAttribute('id')}&page=*&apikey=e9b11b9d`);
+            let myParam1 = await func('get', `https://www.omdbapi.com/?i=${this.getAttribute('id')}&page=*&apikey=e9b11b9d`);
             localStorage.clear();
             localStorage.setItem('myParam1',JSON.stringify(myParam1));
             movieDesign(myParam1);
