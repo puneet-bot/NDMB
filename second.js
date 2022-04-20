@@ -1,8 +1,7 @@
-
+// when the window is loaded and the movie is fetched then storing the record in the javascript local Storage
     window.onload = function(){  
         var MovieJson=(JSON.parse(localStorage.getItem('myParam1')));
         for (const key in MovieJson) {
-            console.log(MovieJson[key]);
            var ListItem= document.querySelector(`#${key} > .my-content`);
            
             if(key==='Poster'){

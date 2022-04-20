@@ -1,3 +1,4 @@
+//Import the second javascript file
 import { movieDesign } from '/second.js';
 var searchMovie     =   document.getElementById('search-bar');
 var sugesttionBar   =   document.getElementById('suggestions');
@@ -5,11 +6,8 @@ var SearchButton    =   document.getElementById('get-my-search');
 var movieName       =   "";
 var MovieDocument   ;
 
-console.log(SearchButton)
-
-//to complete
+//Storing movie names when key is pressed 
 searchMovie.addEventListener('keyup',function(e){
-    console.log(e.key);
     switch(e.key){
         case 'Shift':
             break;
@@ -27,23 +25,20 @@ searchMovie.addEventListener('keyup',function(e){
                 movieName='';
             else{
                 movieName=movieName.substring(0,movieName.length-1);
-                console.log('after del', movieName);
             }
             parameter(movieName);
         break;
         default:
-            console.log('executed',movieName)
             movieName+=e.key;
             parameter(movieName);
             break;
     }
-    // console.log(e.key);
     
 });
 
+//search movie on clicking search button
 SearchButton.addEventListener('click',function(){
     parameter(movieName);
-    // console.log('clicked here in search');
 })
 
 
@@ -51,12 +46,12 @@ searchMovie.addEventListener('click',function(){
     sugesttionBar.classList.toggle('invisible');
 })
 
+//Hitting the api when users expects to find the results and returing the object
 let parameter = async function (movie) {
     if(!movie){
         // to be replaced with models
         alert('Please add a valid name');
     }
-    // console.log(movie);
     let myParam = await func('get', `http://www.omdbapi.com/?t=${movie}&s=${movie}&page=*&apikey=e9b11b9d`);
     MovieDocument=myParam;
     sugesttionBar.innerHTML='';
@@ -71,9 +66,7 @@ let parameter = async function (movie) {
         para.innerHTML+=`<i class="fas fa-solid fa-bookmark" style="color:yellow; float:right; font-size:20px;"></i>`;
         anchorTag.appendChild(para);
         sugesttionBar.appendChild(anchorTag);
-        // console.log(para);
             anchorTag.addEventListener('click',async function(){
-            // console.log(this.getAttribute('id'));
             let myParam1 = await func('get', `http://www.omdbapi.com/?i=${this.getAttribute('id')}&page=*&apikey=e9b11b9d`);
             localStorage.clear();
             localStorage.setItem('myParam1',JSON.stringify(myParam1));
