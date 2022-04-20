@@ -52,7 +52,7 @@ let parameter = async function (movie) {
         // to be replaced with models
         alert('Please add a valid name');
     }
-    let myParam = await func('get', `http://www.omdbapi.com/?t=${movie}&s=${movie}&page=*&apikey=e9b11b9d`);
+    let myParam = await func('get', `https://www.omdbapi.com/?t=${movie}&s=${movie}&page=*&apikey=e9b11b9d`);
     MovieDocument=myParam;
     sugesttionBar.innerHTML='';
     for(let i=0;i<10;i++){
